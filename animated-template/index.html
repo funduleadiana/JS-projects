@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>Animated Template</title>
+    <!-- loading scripts -->
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="navbar.js"></script>
       <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <!-- AOS library -->
@@ -731,21 +735,4 @@
   </footer>
   <!-- End of Footer Section -->
 </body>
-<!-- AOS.js -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    delay: 200,
-    duration: 1500,
-    once: false,
-    mirror: false,
-  });
-</script>
-<!-- Navigation Script -->
-<script>
-  function toggleNavbar(collapseID) {
-    document.getElementById(collapseID).classList.toggle("hidden");
-    document.getElementById(collapseID).classList.toggle("block");
-  }
-</script>
 </html>

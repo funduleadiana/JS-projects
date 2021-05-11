@@ -7,6 +7,21 @@ const websiteUrlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmarks-container');
 
 let bookmarks = [];
+
+//In the case of larger arrays a more efficient way is to change from array to object
+/**
+ * let bookmarks = {};
+ * 
+ * instead of bookmarks.forEach()
+ * Object.keys(bookmarks).forEach((id) => {})
+ * 
+ * deleteBookmark(id){
+ * if(bookmarks[id]){
+ *      delete bookmarks[id]
+ * }}
+ * 
+ * 
+ */
 // Show modal
 function showModal(){
     modal.classList.add('show-modal');

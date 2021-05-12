@@ -17,3 +17,7 @@
 
 ## Book keeper
 ![Book keeper](https://github.com/funduleadiana/JS-projects/blob/main/book-keeper/assets/Screenshot%20(14).png 'Snapshot')
+
+
+## Form Validator
+![Form Validator](https://github.com/funduleadiana/JS-projects/blob/main/form-validator/assets/Screenshot%20(20).png 'Snapshot')

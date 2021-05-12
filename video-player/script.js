@@ -23,7 +23,7 @@ function playPause(){
     }else{
         video.pause();
        showPlay();
-        }
+    }
 }
 
 video.addEventListener('ended', showPlay);
@@ -31,6 +31,19 @@ video.addEventListener('ended', showPlay);
 
 // Progress Bar ---------------------------------- //
 
+function displayTime(time){
+    const minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    seconds = seconds > 9 ? seconds : `0${seconds}`;
+    return `${minutes}:${seconds}`;
+}
+// update progress
+
+function updateProgress(){
+    progressBar.style.width = `${(video.currentTime / video.duration)* 100}%`;
+    currentTime.textContent = `${displayTime(video.currentTime)}/`;
+    duration.textContent = `${displayTime(video.duration)}`;
+}
 
 
 // Volume Controls --------------------------- //
@@ -49,3 +62,5 @@ video.addEventListener('ended', showPlay);
 
 playBtn.addEventListener('click', playPause);
 video.addEventListener('click', playPause);
+video.addEventListener('timeupdate', updateProgress);
+video.addEventListener('canplay', updateProgress)

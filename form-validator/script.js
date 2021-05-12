@@ -22,7 +22,7 @@ function validateForm(){
         displayErrorMessage();
         return;
     }
-    if(password1 === password2){
+    if(password1.value === password2.value){
         passwordsMatch = true;
         password1.style.borderColor = 'green';
         password2.style.borderColor = 'green';
@@ -42,10 +42,25 @@ function validateForm(){
     }
 }
 
+//Storing the form data
+
+function storeFormData(){
+    const user = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        website: form.website.value,
+        password: form.password.value
+    }
+    
+}
 
 function processFormData(e){
     e.preventDefault();
     validateForm();
+    if(isValid && passwordsMatch){
+        storeFormData();
+    }
 }
 
 form.addEventListener('submit', processFormData);

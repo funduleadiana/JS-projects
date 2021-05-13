@@ -22,4 +22,22 @@ function test(){
         });
 }
 
+async function getJoke(){
+    let joke = '';
+    const jokeApi = 'https://v2.jokeapi.dev/joke/Programming,Dark?blacklistFlags=political,racist,sexist,explicit'
+    try{
+        const response = await fetch(jokeApi);
+        const data = await response.json();
+        if(data.setup){
+            joke = `${data.setup} ... ${data.delivery}`;
+        }else{
+            joke = data.joke;
+        }
+    console.log(joke);
+
+    }catch(error){
+        console.log('getJoke', error)
+    }
+}
 test();
+getJoke();

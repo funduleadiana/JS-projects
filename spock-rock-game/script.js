@@ -20,11 +20,11 @@ const allGameIcons = document.querySelectorAll('.far');
 
 
 const choices = {
-  Spock: { name: 'Rock', defeats: ['scissors', 'lizard'] },
-  paper: { name: 'Paper', defeats: ['Spock', 'spock'] },
+  rock: { name: 'Rock', defeats: ['scissors', 'lizard'] },
+  paper: { name: 'Paper', defeats: ['rock', 'spock'] },
   scissors: { name: 'Scissors', defeats: ['paper', 'lizard'] },
   lizard: { name: 'Lizard', defeats: ['paper', 'spock'] },
-  spock: { name: 'Spock', defeats: ['scissors', 'Spock'] },
+  spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
 
@@ -41,6 +41,17 @@ function resetSelected(){
   })
 };
 
+function resetAll(){
+  resetSelected();
+  computerScoreNumber = 0;
+  computerScoreEl.textContent = computerScoreNumber;
+  playerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  playerChoiceEl.textContent = '';
+  computerChoiceEl.textContent = '';
+  resultText.textContent = "Let's play!";
+  
+}
 
 function computerRandomChoice(){
   const computerChoiceNumber = Math.random();
@@ -55,7 +66,6 @@ function computerRandomChoice(){
   }else{
     computerChoice = 'spock';
   }
-  console.log(computerChoice)
 }
 
 
@@ -143,5 +153,10 @@ function select(playerChoice){
       default:
         break;
   }
-}
+};
 
+window.select = select;
+
+//on load init
+
+resetAll();

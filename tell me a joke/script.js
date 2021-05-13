@@ -22,6 +22,19 @@ function test(){
         });
 }
 
+function tellMe(joke){
+    VoiceRSS.speech ({ 
+        key: 'a053e9b095a34ff58e3e4fe513bbfd37',
+        src: `${joke}`,
+         hl: 'en-us',
+         v: 'Linda',
+         r: 0, 
+         c: 'mp3',
+         f: '44khz_16bit_stereo',
+         ssml: false
+     });
+}
+
 async function getJoke(){
     let joke = '';
     const jokeApi = 'https://v2.jokeapi.dev/joke/Programming,Dark?blacklistFlags=political,racist,sexist,explicit'
@@ -33,7 +46,7 @@ async function getJoke(){
         }else{
             joke = data.joke;
         }
-    console.log(joke);
+    tellMe(joke);
 
     }catch(error){
         console.log('getJoke', error)

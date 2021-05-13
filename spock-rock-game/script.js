@@ -27,7 +27,12 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'Spock'] },
 };
 
+
 let computerChoice = '';
+
+let playerScoreNumber = 0;
+let computerScoreNumber = 0;
+
 
 //Reset all selected icons
 function resetSelected(){
@@ -82,18 +87,38 @@ function displayComputerChoice(){
   }
 }
 
+//Increase / update score
+
+function updateScore(playerChoice){
+  if(playerChoice === computerChoice){
+    resultText.textContent = "It's a tie!";
+  }else{
+    const choice = choices[playerChoice];
+    if(choice.defeats.indexOf(computerChoice) > -1){
+      resultText.textContent = "You won!";
+      playerScoreNumber++;
+      playerScoreEl.textContent = playerScoreNumber;
+    }else{
+      resultText.textContent = "You lost...";
+      computerScoreNumber++;
+      computerScoreEl.textContent = computerScoreNumber;
+    }
+  }
+
+}
 
 
 
-function checkResult(){
+function checkResult(playerChoice){
   resetSelected();
   computerRandomChoice();
   displayComputerChoice();
+  updateScore(playerChoice)
 }
 //Passing player sel val
 
 function select(playerChoice){
-  checkResult();
+  checkResult(playerChoice);
   switch(playerChoice){
     case 'rock':
       playerRock.classList.add('selected');

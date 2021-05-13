@@ -21,3 +21,15 @@
 
 ## Form Validator
 ![Form Validator](https://github.com/funduleadiana/JS-projects/blob/main/form-validator/assets/Screenshot%20(20).png 'Snapshot')
+
+## Picture-in-Picture
+![Picture-in-Picture](https://github.com/funduleadiana/JS-projects/blob/main/picture-in-picture/assets/Screenshot%20(26).png 'Snapshot')
+
+## Music player
+![Music Player](https://github.com/funduleadiana/JS-projects/blob/main/music-player/assets/Screenshot%20(23).png 'Snapshot')
+
+## Tell me a joke
+![Tell me a joke](https://github.com/funduleadiana/JS-projects/blob/main/tell%20me%20a%20joke/assets/Screenshot%20(29).png 'Snapshots')
+
+## Spock Rock Paper game
+![Spock Rock game](https://github.com/funduleadiana/JS-projects/blob/main/spock-rock-game/assets/Screenshot%20(25).png 'Snapshots')

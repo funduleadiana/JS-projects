@@ -26,6 +26,22 @@ function darkMode(){
 
 }
 
+function lightMode(){
+   
+    
+        nav.style.backgroundColor = 'rgb(255 255 255/ 50%)';
+        textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+        //Manually changing the html elements
+        toggleIcon.children[0].textContent = 'Light Mode';
+        toggleIcon.children[1].classList.remove('fa-moon');
+        toggleIcon.children[1].classList.add('fa-sun');
+        
+        // Changing the pictures
+        image1.src= 'img/undraw_conceptual_idea_light.svg';
+        image2.src= 'img/undraw_feeling_proud_light.svg';
+        image3.src= 'img/undraw_proud_coder_light.svg';
+}
+
 function switchTheme(e){
     if(e.target.checked){
         document.documentElement.setAttribute('data-theme', 'dark')

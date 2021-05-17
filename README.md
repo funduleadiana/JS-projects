@@ -33,3 +33,7 @@
 
 ## Spock Rock Paper game
 ![Spock Rock game](https://github.com/funduleadiana/JS-projects/blob/main/spock-rock-game/assets/Screenshot%20(25).png 'Snapshots')
+
+## Light/Dark mode
+![Light Dark mode](https://github.com/funduleadiana/JS-projects/blob/main/light-dark-mode/assets/Screenshot%20(33).png 'Snapshots')
+![Light Dark mode] (https://github.com/funduleadiana/JS-projects/blob/main/light-dark-mode/assets/Screenshot%20(34).png 'Snapshots')

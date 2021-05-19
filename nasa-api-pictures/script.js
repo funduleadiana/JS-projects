@@ -11,12 +11,69 @@ const apiUrlNasa = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=
 let resultsArray = [];
 
 
+function updateDOM(){
+    resultsArray.forEach((result)=> {
+        //Creating the card container
+        const card = document.createElement('div');
+        card.classList.add('card');
+        //Link that will be wrapping our image
+
+        const link = document.createElement('a');
+        link.href = result.hdurl;
+        link.title = 'View Full Image';
+        link.target = '_blank';
+        ///Creating the image 
+
+        const image = document.createElement('img');
+        image.src = result.url;
+        image.alt = 'Nasa picture of the day';
+        image.loading = 'lazy';
+        image.classList.add('card-img-top');
+
+
+        //Card body
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+        const cardTitle = document.createElement('h5');
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = result.title;
+
+
+
+        //Save text
+        const saveText = document.createElement('p');
+        saveText.classList.add('clickable');
+        saveText.textContent = 'Add to Favorites';
+
+
+
+        //Card text
+        const cardText = document.createElement('p');
+        cardText.textContent = result.explanation;
+
+        //Footer container
+        const footer = document.createElement('small');
+        footer.classList.add('text-muted');
+
+        //Date
+        const date = document.createElement('strong');
+        date.textContent = result.date;
+
+        //Copyright
+        const copyright = document.createElement('span');
+        copyright.textContent = `${result.copyright}`;
+
+    });
+
+}
+
 //Get 15 img from NASA API
 async function getNasaPic(){
     try{
         const response = await fetch(apiUrlNasa);
         resultsArray = await response.json();
-        console.log(resultsArray);
+        updateDOM();
 
     }catch(error){
         console.log(error)

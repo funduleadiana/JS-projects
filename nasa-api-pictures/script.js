@@ -13,6 +13,7 @@ let resultsArray = [];
 
 function updateDOM(){
     resultsArray.forEach((result)=> {
+        console.log(result);
         //Creating the card container
         const card = document.createElement('div');
         card.classList.add('card');
@@ -56,15 +57,15 @@ function updateDOM(){
         date.textContent = result.date;
 
         //Copyright
+        const copyRightResult = result.copyright === undefined ? '' : result.copyright;
         const copyright = document.createElement('span');
-        copyright.textContent = `${result.copyright}`;
+        copyright.textContent = ` ${copyRightResult}`;
 
         //Apending all elements to container
         footer.append(date, copyright);
         cardBody.append(cardTitle, saveText, cardText, footer);
         link.appendChild(image);
-        card.appendChild(link, cardBody);
-        console.log(card)
+        card.append(link, cardBody);
         imagesContainer.appendChild(card);
     });
 }

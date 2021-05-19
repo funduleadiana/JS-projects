@@ -90,7 +90,9 @@ function saveFavorite(itemUrl){
     // looping to select favorite
 
     resultsArray.forEach((item)=>{
-        if(item.url.includes(itemUrl)){
+
+        //Check that the favorites item does not already contain the same favorites url
+        if(item.url.includes(itemUrl) && !favorites[itemUrl]){
             favorites[itemUrl] = item;
             //Show save confirmation for 2 sec 
 

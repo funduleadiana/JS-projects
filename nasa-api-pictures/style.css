@@ -120,8 +120,9 @@ body {
 /* Large Smartphone (Vertical) */
 @media screen and (max-width: 800px) {
   body {
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     font-size: 0.9rem;
+    text-align: justify;
 
   }
   .images-container{
@@ -133,5 +134,8 @@ body {
     font-size: 20px;
   }
 
+  .save-confirmed{
+    right: 25px;
+  }
   
 }

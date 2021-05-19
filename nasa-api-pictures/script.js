@@ -30,7 +30,6 @@ function updateDOM(){
         image.loading = 'lazy';
         image.classList.add('card-img-top');
 
-
         //Card body
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
@@ -39,14 +38,10 @@ function updateDOM(){
         cardTitle.classList.add('card-title');
         cardTitle.textContent = result.title;
 
-
-
         //Save text
         const saveText = document.createElement('p');
         saveText.classList.add('clickable');
         saveText.textContent = 'Add to Favorites';
-
-
 
         //Card text
         const cardText = document.createElement('p');
@@ -64,8 +59,14 @@ function updateDOM(){
         const copyright = document.createElement('span');
         copyright.textContent = `${result.copyright}`;
 
+        //Apending all elements to container
+        footer.append(date, copyright);
+        cardBody.append(cardTitle, saveText, cardText, footer);
+        link.appendChild(image);
+        card.appendChild(link, cardBody);
+        console.log(card)
+        imagesContainer.appendChild(card);
     });
-
 }
 
 //Get 15 img from NASA API

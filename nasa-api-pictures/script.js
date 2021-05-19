@@ -99,7 +99,10 @@ function saveFavorite(itemUrl){
             saveConfirmed.hidden = false;
             setTimeout(()=> {
                 saveConfirmed.hidden = true;
-            }, 2000)
+            }, 2000);
+
+            //Set favorites in local storage
+            localStorage.setItem('nasaFavorites', JSON.stringify(favorites));
         }
     })
 }

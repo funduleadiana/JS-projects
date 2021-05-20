@@ -89,14 +89,22 @@ function updateDOM(page){
     }
     imagesContainer.textContent = '';
     createDOMNodes(page);
+    showContent();
+}
+
+function showContent(){
+    loader.classList.add('hidden');
 }
 
 //Get 15 img from NASA API
 async function getNasaPic(){
+    //Show loader
+    loader.classList.remove('hidden');
     try{
         const response = await fetch(apiUrlNasa);
         resultsArray = await response.json();
-        updateDOM('favorites');
+        updateDOM('results');
+        
 
     }catch(error){
         console.log(error)

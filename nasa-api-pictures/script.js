@@ -89,11 +89,18 @@ function updateDOM(page){
     }
     imagesContainer.textContent = '';
     createDOMNodes(page);
-    showContent();
+    showContent(page);
 }
 
-function showContent(){
+function showContent(page){
     window.scrollTo({top: 0, behavior: 'instant'});
+    if(page=== 'results'){
+        resultsNav.classList.remove('hidden')
+        favoritesNav.classList.add('hidden');
+    } else{
+        resultsNav.classList.add('hidden')
+        favoritesNav.classList.remove('hidden');
+    }
     loader.classList.add('hidden');
 }
 

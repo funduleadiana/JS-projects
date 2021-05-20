@@ -93,6 +93,7 @@ function updateDOM(page){
 }
 
 function showContent(){
+    window.scrollTo({top: 0, behavior: 'instant'});
     loader.classList.add('hidden');
 }
 
@@ -104,7 +105,6 @@ async function getNasaPic(){
         const response = await fetch(apiUrlNasa);
         resultsArray = await response.json();
         updateDOM('results');
-        
 
     }catch(error){
         console.log(error)

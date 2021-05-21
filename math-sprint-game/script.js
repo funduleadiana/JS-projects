@@ -34,34 +34,61 @@ const wrongFormat = [];
 
 // Scroll
 
+//Get random number 
+function getRandomInt(max){
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+//Shuffle Array - shuffle algorithm Fisher-Yates
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 // Create Correct/Incorrect Random Equations
 function createEquations() {
   // Randomly choose how many correct equations there should be
-  // const correctEquations = 
+  const correctEquations = getRandomInt(questionAmount);
   // Set amount of wrong equations
-  // const wrongEquations = 
+  const wrongEquations = questionAmount - correctEquations;
   // Loop through, multiply random numbers up to 9, push to array
-  // for (let i = 0; i < correctEquations; i++) {
-  //   firstNumber = 
-  //   secondNumber = 
-  //   const equationValue = firstNumber * secondNumber;
-  //   const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
-  //   equationObject = { value: equation, evaluated: 'true' };
-  //   equationsArray.push(equationObject);
-  // }
+  for (let i = 0; i < correctEquations; i++) {
+    firstNumber = getRandomInt(9);
+    secondNumber = getRandomInt(9);
+    const equationValue = firstNumber * secondNumber;
+    const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
+    equationObject = { value: equation, evaluated: 'true' };
+    equationsArray.push(equationObject);
+  }
   // Loop through, mess with the equation results, push to array
-  // for (let i = 0; i < wrongEquations; i++) {
-  //   firstNumber = 
-  //   secondNumber = 
-  //   const equationValue = firstNumber * secondNumber;
-  //   wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
-  //   wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
-  //   wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
-  //   const formatChoice = 
-  //   const equation = wrongFormat[formatChoice];
-  //   equationObject = { value: equation, evaluated: 'false' };
-  //   equationsArray.push(equationObject);
-  // }
+  for (let i = 0; i < wrongEquations; i++) {
+    firstNumber = getRandomInt(9);
+    secondNumber = getRandomInt(9);
+    const equationValue = firstNumber * secondNumber;
+    wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
+    wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
+    wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
+    const formatChoice = getRandomInt(3);
+    const equation = wrongFormat[formatChoice];
+    equationObject = { value: equation, evaluated: 'false' };
+    equationsArray.push(equationObject);
+  }
+  shuffle(equationsArray);
+  console.log('equations array', equationsArray);
 }
 
 // Dynamically adding correct/incorrect equations
@@ -104,6 +131,7 @@ function showCountdown(){
   countdownPage.hidden = false;
   splashPage.hidden = true;
   countdownStart();
+  createEquations();
 }
 
 //Get the value from our selected radio function

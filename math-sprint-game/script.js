@@ -39,6 +39,22 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
+//show score page function
+function showScorePage(){
+  gamePage.hidden = true;
+  scorePage.hidden = false;
+}
+//Format and siplay sore page
+function scoresToDOM(){
+  finalTimeDisplay = finalTime.toFixed(1);
+  baseTime = timePlayed.toFixed(1);
+  penaltyTime = penaltyTime.toFixed(1);
+  baseTimeEl.textContent = `Base Time: ${baseTime}`;
+  penaltyTimeEl.textContent = `Penalty: +${penaltyTime}s`;
+  finalTimeEl.textContent = `${finalTimeDisplay}s`;
+  showScorePage();
+}
+
 //Stop timer, process results, go to score page
 function checkTime(){
   if(playerGuessArray.length == questionAmount){
@@ -52,7 +68,8 @@ function checkTime(){
       }
     });
     finalTime = timePlayed + penaltyTime;
-    console.log('time', timePlayed , 'penalty', penaltyTime, 'final', finalTime)
+    console.log('time', timePlayed , 'penalty', penaltyTime, 'final', finalTime);
+    scoresToDOM();
   }
 }
 

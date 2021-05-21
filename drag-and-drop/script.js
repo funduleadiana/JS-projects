@@ -94,6 +94,29 @@ function updateDOM(){
     updatedOnLoad = true;
     updateSavedColumns();
 }
+//Add to column list
+function addToColumn(col){
+    const itemText = addItems[col].textContent;
+    const selectedArray = listArrays[col];
+    selectedArray.push(itemText);
+    addItems[col].textContent = '';
+    updateDOM();
+}
+
+//Show add item input box
+function showInputBox(col){
+    addBtns[col].style.visibility = 'hidden';
+    saveItemBtns[col].style.display = 'flex';
+    addItemContainers[col].style.display = 'flex';
+}
+
+//Hide item input box
+function hideInputBox(col){
+    addBtns[col].style.visibility = 'visible';
+    saveItemBtns[col].style.display = 'none';
+    addItemContainers[col].style.display = 'none';
+    addToColumn(col);
+}
 
 //Updating arrays after drag and drop
 function rebuildArrays(){

@@ -40,3 +40,6 @@
 
 ## Drag and Drop/Kanban board
 ![Drag and drop](https://github.com/funduleadiana/JS-projects/blob/main/drag-and-drop/assets/Screenshot%20(46).png 'Snapshots')
+
+## Math sprint game
+![Math sprint game](https://github.com/funduleadiana/JS-projects/blob/main/math-sprint-game/assets/Screenshot%20(39).png 'Snapshots')

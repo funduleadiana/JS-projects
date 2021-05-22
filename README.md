@@ -37,3 +37,6 @@
 ## Light/Dark mode
 ![Light Dark mode](https://github.com/funduleadiana/JS-projects/blob/main/light-dark-mode/assets/Screenshot%20(33).png 'Snapshots')
 ![Light Dark mode](https://github.com/funduleadiana/JS-projects/blob/main/light-dark-mode/assets/Screenshot%20(34).png 'Snapshots')
+
+## Drag and Drop/Kanban board
+![Drag and drop](https://github.com/funduleadiana/JS-projects/blob/main/drag-and-drop/assets/Screenshot%20(46).png 'Snapshots')

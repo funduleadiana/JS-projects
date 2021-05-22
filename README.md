@@ -43,3 +43,4 @@
 
 ## Math sprint game
 ![Math sprint game](https://github.com/funduleadiana/JS-projects/blob/main/math-sprint-game/assets/Screenshot%20(39).png 'Snapshots')
+![Math sprint game](https://github.com/funduleadiana/JS-projects/blob/main/math-sprint-game/assets/Screenshot%20(45).png 'Snapshots')

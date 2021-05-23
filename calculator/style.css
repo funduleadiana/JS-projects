@@ -70,8 +70,45 @@ body {
 .equal-sign{
   grid-column: -2;
   grid-row: 2 / span 4;
+  background: rgb(63, 136, 130) !important;
 }
 
 button{
   font-family: 'Zen Dots', cursive;
+  min-height: 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background: rgb(170, 170, 170);
+  cursor: pointer;
+}
+button:hover{
+  filter: brightness(120%);
+}
+button:active{
+  transform: translateY(2px);
+}
+
+button:focus{
+  outline: none; 
+}
+
+.operator{
+  background: rgb(13, 95, 13);
+  font-size: 30px;
+  color: white;
+}
+
+.clear{
+  background: rgb(151, 0, 0);
+  color: white;
+}
+
+
+/* Media query LArge smartphone vertical orientation */
+@media screen and (max-width: 600px) {
+  .calculator{
+    width: 95%;
+  }
+  
 }

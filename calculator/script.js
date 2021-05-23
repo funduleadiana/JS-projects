@@ -5,6 +5,15 @@ const clearBtn = document.getElementById('clear-btn');
 let firstValue = 0;
 let operatorValue = '';
 let awaitingNextValue = false;
+//calculate first and second values depending on operator
+
+const calculate = {
+    '/': (firstNumber, secondNumber) => firstNumber/secondNumber,
+    '*': (firstNumber, secondNumber) => firstNumber*secondNumber,
+    '+': (firstNumber, secondNumber) => firstNumber+secondNumber,
+    '-': (firstNumber, secondNumber) => firstNumber-secondNumber,
+    '=': (firstNumber, secondNumber) => secondNumber,
+}
 
 function sendNumberValue(number){
     // if current display value is 0 replace if not add numnber
@@ -25,17 +34,10 @@ function addDecimal(){
     }
 }
 
-//calculate first and second values depending on operator
 
-const calculate = {
-    '/': (firstNumber, secondNumber) => firstNumber/secondNumber,
-    '*': (firstNumber, secondNumber) => firstNumber*secondNumber,
-    '+': (firstNumber, secondNumber) => firstNumber+secondNumber,
-    '-': (firstNumber, secondNumber) => firstNumber-secondNumber,
-    '=': (firstNumber, secondNumber) => secondNumber,
-}
 
-// 
+// operator functionality
+
 function useOperator(operator){
     const currentValue = Number(calculatorDisplay.textContent);
     // To prevent multiple operators
@@ -55,6 +57,17 @@ function useOperator(operator){
     operatorValue = operator;
 }
 
+// Reset all values
+function resetAll(){
+
+    firstValue = 0;
+    operatorValue = '';
+    awaitingNextValue = false;
+    calculatorDisplay.textContent = '0';
+}
+
+//Event listeners
+
 inputBtns.forEach(button=> {
     if(button.classList.length === 0){
         button.addEventListener('click', ()=>sendNumberValue(button.value));
@@ -64,14 +77,5 @@ inputBtns.forEach(button=> {
         button.addEventListener('click', ()=>addDecimal());
     }
 })
-
-// Reset all val
-function resetAll(){
-
-        firstValue = 0;
-    operatorValue = '';
-    awaitingNextValue = false;
-    calculatorDisplay.textContent = '0';
-}
 
 clearBtn.addEventListener('click', resetAll)

@@ -60,6 +60,17 @@ body {
   background: #555;
 }
 
+/* Buttons */
+.calculator-buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+.equal-sign{
+  grid-column: -2;
+  grid-row: 2 / span 4;
+}
 
 button{
   font-family: 'Zen Dots', cursive;

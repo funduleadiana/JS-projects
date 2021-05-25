@@ -50,3 +50,6 @@
 
 ## Pong Game
 ![Pong game](https://github.com/funduleadiana/JS-projects/blob/main/pong%20game/assets/Screenshot%20(55).png 'Snapshots')
+
+## Paint clone
+![Paint clone](https://github.com/funduleadiana/JS-projects/blob/main/paint-clone/asset/Screenshot%20(51).png 'Snapshots')

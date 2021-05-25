@@ -187,17 +187,19 @@ loadStorageBtn.addEventListener('click', () => {
   // Active Tool
     activeToolEl.textContent = 'Canvas Loaded';
     setTimeout(switchToBrush, 1500);
-  } 
+  } else{
+    activeToolEl.textContent = 'No canvas found';
+  }
 
 });
 
-// // Clear Local Storage
-// clearStorageBtn.addEventListener('click', () => {
-
-//   // Active Tool
-//   activeToolEl.textContent = 'Local Storage Cleared';
-//   setTimeout(switchToBrush, 1500);
-// });
+// Clear Local Storage
+clearStorageBtn.addEventListener('click', () => {
+  localStorage.removeItem('savedCanvas');
+  // Active Tool
+  activeToolEl.textContent = 'Local Storage Cleared';
+  setTimeout(switchToBrush, 1500);
+});
 
 // // Download Image
 // downloadBtn.addEventListener('click', () => {
